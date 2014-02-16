@@ -1,5 +1,20 @@
+---
+branches:
+  only:
+  - source
 language: ruby
 rvm:
   - 2.0.0
   - 1.9.3
-script: bundle exec rake install; bundle exec rake generate
+before_script:
+- export REPO_URL="https://$GH_TOKEN@github.com/$GH_REPO.git"
+- rake setup_github_pages[$REPO_URL]
+---script: bundle exec rake install; bundle exec rake generate
+script:
+- bundle exec rake generate
+after_script:
+- rake deploy
+env:
+  global:
+  - GH_REPO="gutti/gutti.github.io"
+  - secure: "kjgOFQ8bdy9xT1yqUpnt5CG+Zcbaa+nD//bkKvNr2xQQM0MshXV+qsjnnzj5lKq2vCpLtL0570WVhkb8soQLl7LwWolbL7a2TRoGjYnA0y91JoGotIc5pmeJCvMhCwItfSFbaAS8vO4Kai25cKpaU2LxxCokZZrDT2uz06lY08Q="
