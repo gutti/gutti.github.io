@@ -4,7 +4,6 @@ branches:
   - source
 language: ruby
 rvm:
----  - 2.0.0
   - 1.9.3
 before_script:
 - export REPO_URL="https://$GH_TOKEN@github.com/$GH_REPO.git"
