@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: "2014-02-16-prose-test.markdown"
+title: "prose-test"
 comments: true
 categories: misc
 ---
