@@ -4,10 +4,10 @@ branches:
   - source
 language: ruby
 rvm:
-  - 2.0.0
+---  - 2.0.0
   - 1.9.3
 before_script:
-- export REPO_URL="https://$GH_TOKEN:x-oauth-basic@github.com/$GH_REPO.git"
+- export REPO_URL="https://$GH_TOKEN@github.com/$GH_REPO.git"
 - bundle exec rake setup_github_pages[$REPO_URL]
 ---script: bundle exec rake install; bundle exec rake generate
 script:
