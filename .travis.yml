@@ -15,5 +15,9 @@ after_script:
 - bundle exec rake deploy
 env:
   global:
+  - GIT_COMMITTER_NAME="gutti"
+  - GIT_COMMITTER_EMAIL="gutti38@gmail.com"
+  - GIT_AUTHOR_NAME="gutti"
+  - GIT_AUTHOR_EMAIL="gutti38@gmail.com"
   - GH_REPO="gutti/gutti.github.io"
   - secure: "T+OqFp6R7bL4q77/MUvlS/TP9IHSi6or41QiJoHdKKDjWTOjzK5oOjsvoC8kEH4lH9fddjHiipWVNyVTT+SUJO8H5ZzV24WYAXbUaa8BgvepQxu31vI2p5wtnLHOSbPWlPuuepZuCgxqz+cLRUO0rxRCm2UTZTJiFB2xdO7RjVE="
