@@ -2,10 +2,10 @@
 layout: post
 published: true
 title: "Prose-test"
-comments: true
+comments: false
 categories: misc
 ---
 
 ## Prose投稿テスト
 
-・テスト
+・テストです。Travis CIで`git push`通った
