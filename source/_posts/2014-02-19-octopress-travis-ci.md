@@ -26,6 +26,7 @@ env:
 （Middlemanも気になる・・）
 
 一応最初の記事の補足をしておくと、
+
 * Step1: OctopressをGithub pagesにデプロイ
 * Step2: Prose.ioの設定。Prose.io上で色々設定できるようになったりする
 * Step3: Travis CIからpushするためにGithubのアクセストークンを取得する
@@ -35,5 +36,3 @@ env:
 
 ## 注意
 ってほどでもないけどローカルで`git pull origin source`をしておかないと、たまにローカルから記事書いた時とかコンフリクトしそうな気がする。
-
-
