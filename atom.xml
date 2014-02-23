@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[gutti.jp]]></title>
+  <link href="http://gutti.jp/atom.xml" rel="self"/>
+  <link href="http://gutti.jp/"/>
+  <updated>2014-02-23T01:48:04+00:00</updated>
+  <id>http://gutti.jp/</id>
+  <author>
+    <name><![CDATA[gutti]]></name>
+    
+  </author>
+
+  
+  <entry>
+    <title type="html"><![CDATA[OctopressをTravis CIでデプロイするやつ]]></title>
+    <link href="http://gutti.jp/blog/2014/02/19/octopress-travis-ci/"/>
+    <updated>2014-02-19T00:00:00+00:00</updated>
+    <id>http://gutti.jp/blog/2014/02/19/octopress-travis-ci</id>
+    <content type="html"><![CDATA[<h2>概要</h2>
+
+<p>Github pagesで運用しているOctopressを<code>git push origin source</code>すると、Travis CI上でジェネレートからデプロイまでやってくれる。<br/>
+この仕込みをしておくと、<a href="http://prose.io/">Prose.io</a>などGithubのリポジトリをいじれるツールから記事を投稿できるようになる。すごい</p>
+
+<h2>手順</h2>
+
+<p><a href="http://rogerz.github.io/blog/2013/02/21/prose-io-github-travis-ci/">Octopress+Prose+Github+Travis CI = coders&#8217; blog &ndash; Human, not octopus</a>の通りにします。<br/>
+なお、Step4で以下を追記します。</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>env:
+</span><span class='line'>  global:
+</span><span class='line'>    - GIT_COMMITTER_NAME=&lt;名前&gt;
+</span><span class='line'>    - GIT_COMMITTER_EMAIL=&lt;Eメール&gt;
+</span><span class='line'>    - GIT_AUTHOR_NAME=&lt;名前&gt;
+</span><span class='line'>    - GIT_AUTHOR_EMAIL=&lt;Eメール&gt;</span></code></pre></td></tr></table></div></figure>
+
+
+<p>この設定がないと、commitできずにpushでコケてまずいです。<br/>
+参考：<a href="http://tricknotes.hateblo.jp/entry/2013/06/17/020229">Middleman で作った web サイトを Travis + GitHub pages でお手軽に運用する &ndash; tricknotesのぼうけんのしょ</a><br/>
+（Middlemanも気になる・・）</p>
+
+<p>一応最初の記事の補足をしておくと、</p>
+
+<ul>
+<li>Step1: OctopressをGithub pagesにデプロイ</li>
+<li>Step2: Prose.ioの設定。Prose.io上で色々設定できるようになったりする</li>
+<li>Step3: Travis CIからpushするためにGithubのアクセストークンを取得する</li>
+<li>Step4: .travis.ymlの設定。3で取得したトークンで<code>travis encrypt GH_TOKEN=your_token</code>を叩く</li>
+<li>Step5: Rakefileを改造。記事とちょっと違っていたけど適宜あわせる</li>
+<li>Step6: sourceブランチにpushしたらTravis CIがほげほげ</li>
+</ul>
+
+
+<h2>注意</h2>
+
+<p>ってほどでもないけどローカルで<code>git pull origin source</code>をしておかないと、たまにローカルから記事書いた時とかコンフリクトしそうな気がする。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Prose-test]]></title>
+    <link href="http://gutti.jp/blog/2014/02/16/prose-test/"/>
+    <updated>2014-02-16T00:00:00+00:00</updated>
+    <id>http://gutti.jp/blog/2014/02/16/prose-test</id>
+    <content type="html"><![CDATA[<h2>Prose投稿テスト</h2>
+
+<p>・テストです。Travis CIで<code>git push</code>通った</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[octopressインストール]]></title>
+    <link href="http://gutti.jp/blog/2014/01/25/octopress-installation/"/>
+    <updated>2014-01-25T15:26:33+00:00</updated>
+    <id>http://gutti.jp/blog/2014/01/25/octopress-installation</id>
+    <content type="html"><![CDATA[<p>何かコンテンツが欲しいのでとりあえず書きます。
+公式ドキュメントを読めばというかコマンドをその通り叩いていればインストールされます多分。</p>
+
+<ul>
+<li>セットアップ：<a href="http://octopress.org/docs/setup/">Octopress Setup</a>
+
+<ul>
+<li>rubyはRVMで構築しました</li>
+<li>rakeコマンドでエラーでたりしたら<code>bundle exec rake</code>とやるといいかもです</li>
+</ul>
+</li>
+<li>設定：<a href="http://octopress.org/docs/configuring/">Configuring Octopress</a></li>
+<li>記事を書く：<a href="http://octopress.org/docs/blogging/">Blogging Basics</a>
+
+<ul>
+<li>zshだと<code>bundle install rake new_post\["title"\]</code>みたいにエスケープが必要</li>
+</ul>
+</li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>
