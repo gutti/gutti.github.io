@@ -1,0 +1,4 @@
+theme = "fuji"
+baseURL = 'https://gutti.page/'
+languageCode = 'ja-JP'
+title = 'Garbage Collection'
