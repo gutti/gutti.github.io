@@ -1,4 +1,4 @@
-theme = "fuji"
+theme = "hugo-clarity"
 baseURL = 'https://gutti.page/'
 languageCode = 'ja-JP'
 title = 'Garbage Collection'
